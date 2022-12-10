@@ -12,6 +12,7 @@ jobs:
 
       - name: Build
         run: |
+          pip3 install meson
           chmod +x package-release.sh
           ./package-release.sh release build --no-package
 
