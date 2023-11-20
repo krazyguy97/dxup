@@ -22,13 +22,14 @@ jobs:
       uses: Joshua-Ashton/arch-mingw-github-action@v8
       with:
         command: |
-          chmod +x package-release.sh
-          ./package-release.sh release build --no-package
+          export VERSION_NAME="${GITHUB_REF##*/}-${GITHUB_SHA##*/}"
+          ./package-release.sh ${VERSION_NAME} build --no-package
+          echo "VERSION_NAME=${VERSION_NAME}" >> $GITHUB_ENV
 
     - name: Upload artifacts
       id: upload-artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: dxup
-        path: build/dxup
+        name: dxup-${{ env.VERSION_NAME }}
+        path: build
         if-no-files-found: error
