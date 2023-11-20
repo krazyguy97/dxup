@@ -42,7 +42,7 @@ namespace dxup {
       ConfigMgr() {
 		  initVar(var::EmitNop, "DXUP_EMITNOP", "0");
           initVar(var::Log, "DXUP_LOG", "1");
-          initVar(var::ShaderModel, "DXUP_SHADERMODEL", "2b");
+          initVar(var::ShaderModel, "DXUP_SHADERMODEL", "3");
 
 #ifdef _DEBUG
           initVar(var::Debug, "DXUP_DEBUG", "1");
@@ -65,7 +65,7 @@ namespace dxup {
           initVar(var::RespectPrecision, "DXUP_RESPECT_PRECISION", "1");
 
           initVar(var::RespectVSync, "DXUP_RESPECT_VSYNC", "1");
-          initVar(var::UseFakes, "DXUP_USEFAKES", "1");
+          initVar(var::UseFakes, "DXUP_USEFAKES", "0");
           initVar(var::FakeDriver, "DXUP_FAKE_DRIVER", "aticfx32.dll");
           initVar(var::FakeDescription, "DXUP_FAKE_DESCRIPTION", "AMD Radeon R9 200 Series");
           initVar(var::FakeDeviceName, "DXUP_FAKE_DEVICENAME", "\\\\.\\DISPLAY1");
